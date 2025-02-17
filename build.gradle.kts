@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.0.20"
+    kotlin("jvm") version "2.1.10"
 }
 
 group = "me.matin.mlib"
@@ -9,8 +9,6 @@ repositories {
     mavenCentral()
 }
 
-val java = 21
-
 kotlin {
-    jvmToolchain(java)
+    jvmToolchain(21)
 }
