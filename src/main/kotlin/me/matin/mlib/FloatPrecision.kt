@@ -5,8 +5,8 @@ package me.matin.mlib
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
-val Double.precision: Int get() = if ('.' in toString()) toString().split('.', limit = 2)[1].length else 0
-val Float.precision: Int get() = if ('.' in toString()) toString().split('.', limit = 2)[1].length else 0
+inline val Double.precision: Int get() = toString().trimStart { it.isDigit() }.length - 1
+inline val Float.precision: Int get() = toString().trimStart { it.isDigit() }.length - 1
 
 /**
  * Rounds this double with the given precision.
